@@ -1,7 +1,7 @@
 {
-  "name": "efficientus",
+  "name": "linked-lists",
   "version": "1.0.0",
-  "description": "<h1 align=\"center\"> 📜 Efficientus 📜 <h1>",
+  "description": "# Linked Lists",
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --open --config webpack.dev.js",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DiligentViking/efficientus.git"
+    "url": "git+https://github.com/DiligentViking/linked-lists.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/DiligentViking/efficientus/issues"
+    "url": "https://github.com/DiligentViking/linked-lists/issues"
   },
-  "homepage": "https://github.com/DiligentViking/efficientus#readme",
+  "homepage": "https://github.com/DiligentViking/linked-lists#readme",
   "devDependencies": {
     "@eslint/css": "^0.14.1",
     "@eslint/js": "^9.39.2",
