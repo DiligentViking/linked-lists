@@ -79,6 +79,27 @@ function LinkedList() {
       return -1;
     },
 
+    insertAt(index, ...values) {
+      let curr = head;
+      for (let i = 0; i < index; i++) {
+        curr = curr.nextNode;
+        if (!curr) return RangeError('too far, dude');
+      }
+      for (const value of values) {
+        curr.nextNode = Node(value, curr.nextNode);
+        curr = curr.nextNode;
+      }
+    },
+
+    removeAt(index) {
+      let curr = head;
+      for (let i = 0; i < index; i++) {
+        curr = curr.nextNode;
+        if (!curr.nextNode) return RangeError('too far, dude');
+      }
+      curr.nextNode = curr.nextNode.nextNode;
+    },
+
     toString() {
       let string = '';
       let curr = head.nextNode;
@@ -103,7 +124,7 @@ list.append("warrior's");
 list.append('heart');
 
 console.log(
-  list.findIndex('a')
+  list.removeAt(3)
 );
 
 console.log(
