@@ -1,20 +1,39 @@
-import '../styles/index.css';
-import odinImage from '../assets/images/odin.svg';  // If you want to set the image in JS
+function Node(value=null, nextNode=null) {
+  return {
+    value,
+    nextNode
+  };
+}
 
-import { createTodo, readTodo, readAllTodos, updateTodo, deleteTodo } from './todo.js';
+function LinkedList() {
+  const head = Node();
+  return {
+    append(value) {
+      let curr = head;
+      while (curr.nextNode !== null) {
+        curr = curr.nextNode;
+      }
+      curr.nextNode = Node(value);
+    },
+    toString(value) {
+      let curr = head.nextNode;
+      while (curr) {
+        process.stdout.write(`( ${curr.value} ) -> `);
+        curr = curr.nextNode;
+      }
+      console.log('null');
+    },
+  };
+}
 
-console.log(`
----------------
-~~Efficientus~~
----------------`
-+ '\n\n');
 
-localStorage.clear();
+const list = LinkedList();
 
-createTodo(['today'], 'Feed all of the scats', '2025', 5);
-createTodo(['today', 'tomorrow'], 'Pickleball with S at the park.', '2025', 3);
-createTodo(['tomorrow'], 'Finish v1.0 of Todo app.', '2025', 7);
+list.append('Our');
+list.append('hero');
+list.append('bears');
+list.append('a');
+list.append("warrior's");
+list.append('heart');
 
-readTodo(2);
-
-console.table(readAllTodos());
+list.toString();
